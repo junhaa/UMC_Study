@@ -6,7 +6,7 @@ import umc.study.apiPayload.code.status.ErrorStatus;
 import umc.study.apiPayload.exception.GeneralException;
 
 public class FoodCategoryHandler extends GeneralException {
-    public FoodCategoryHandler(ErrorStatus errorState) {
-        super(errorState);
+    public FoodCategoryHandler(BaseErrorCode errorCode) {
+        super(errorCode);
     }
 }
