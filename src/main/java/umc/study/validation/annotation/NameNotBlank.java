@@ -11,7 +11,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = NameBlankValidator.class)
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface NotBlank {
+public @interface NameNotBlank {
     String message() default "이름은 공백일 수 없습니다.";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};

@@ -6,24 +6,26 @@ import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
-import umc.study.validation.annotation.ValidLength;
+import umc.study.validation.annotation.MemberAddressLengthConstraint;
+
+import static umc.study.util.ApplicationConstants.ADDRESS_MAX_LENGTH;
 
 
 @Component
 @RequiredArgsConstructor
-public class StringLengthValidator implements ConstraintValidator<ValidLength, String> {
+public class MemberAddressLengthValidator implements ConstraintValidator<MemberAddressLengthConstraint, String> {
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        boolean isValid = (value.length() <= 12 && value.length() >= 5);
+        boolean isValid = (value.length() <= ADDRESS_MAX_LENGTH && value.length() >= ADDRESS_MAX_LENGTH);
         if(!isValid){
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus.STRING_LENGTH_NOT_VALID.toString()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate(ErrorStatus.ADDRESS_LENGTH_NOT_VALID.toString()).addConstraintViolation();
         }
         return isValid;
     }
 
     @Override
-    public void initialize(ValidLength constraintAnnotation) {
+    public void initialize(MemberAddressLengthConstraint constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 }

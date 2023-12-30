@@ -6,6 +6,9 @@ import org.springframework.http.HttpStatus;
 import umc.study.apiPayload.code.BaseErrorCode;
 import umc.study.apiPayload.code.ErrorReasonDTO;
 
+import static umc.study.util.ApplicationConstants.ADDRESS_MAX_LENGTH;
+import static umc.study.util.ApplicationConstants.ADDRESS_MIN_LENGTH;
+
 @Getter
 @AllArgsConstructor
 public enum ErrorStatus implements BaseErrorCode {
@@ -26,10 +29,12 @@ public enum ErrorStatus implements BaseErrorCode {
     // 음식 카테고리 에러
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOODCATEGORY4001", "음식 카테고리가 없습니다."),
 
-    //길이 유효성 에러
-    STRING_LENGTH_NOT_VALID(HttpStatus.BAD_REQUEST, "ADDRESS4001", "크기가 5에서 12 사이여야 합니다."),
+    // 주소 에러
+    ADDRESS_LENGTH_NOT_VALID(HttpStatus.BAD_REQUEST, "ADDRESS4001", "주소의 길이가 " + ADDRESS_MIN_LENGTH + "에서 " + ADDRESS_MAX_LENGTH + "사이여야 합니다."),
 
     NAME_NOT_BLANK(HttpStatus.BAD_REQUEST, "NAME4001", "이름은 공백일 수 없습니다."),
+
+
 
     // 예시,,,
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
