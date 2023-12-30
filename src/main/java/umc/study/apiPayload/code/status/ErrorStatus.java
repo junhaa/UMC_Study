@@ -35,6 +35,9 @@ public enum ErrorStatus implements BaseErrorCode {
     NAME_NOT_BLANK(HttpStatus.BAD_REQUEST, "NAME4001", "이름은 공백일 수 없습니다."),
 
 
+    // Region error
+    REGION_NOT_EXIST(HttpStatus.BAD_REQUEST, "REGION4001", "지역이 존재하지 않습니다."),
+
 
     // 예시,,,
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
