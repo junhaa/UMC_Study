@@ -12,12 +12,12 @@ public class RegionRequestDTO {
     @Getter
     public static class JoinStoreDTO{
         @NotBlank
-        String name;
+        private String name;
 
         @NotBlank
         @Size(min = ADDRESS_MIN_LENGTH, max = ADDRESS_MAX_LENGTH)
-        String address;
+        private String address;
 
-        float score = 0.0f;
+        private float score = 0.0f;
     }
 }

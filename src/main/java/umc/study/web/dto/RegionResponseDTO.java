@@ -14,7 +14,7 @@ public class RegionResponseDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class JoinStoreResultDTO{
-        Long storeId;
-        LocalDateTime createdAt;
+        private Long storeId;
+        private LocalDateTime createdAt;
     }
 }

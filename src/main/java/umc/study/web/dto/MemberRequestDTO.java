@@ -15,20 +15,20 @@ public class MemberRequestDTO {
     @Getter
     public static class JoinMemberDto {
         @NotBlank
-        String name;
+        private String name;
         @NotNull
-        Integer gender;
+        private Integer gender;
         @NotNull
-        Integer birthYear;
+        private Integer birthYear;
         @NotNull
-        Integer birthMonth;
+        private Integer birthMonth;
         @NotNull
-        Integer birthDay;
+        private Integer birthDay;
         @Size(min = ADDRESS_MIN_LENGTH, max = ADDRESS_MAX_LENGTH)
-        String address;
+        private String address;
         @Size(min = ADDRESS_MIN_LENGTH, max = ADDRESS_MAX_LENGTH)
-        String specAddress;
+        private String specAddress;
         @FoodExistCategories
-        List<Long> preferCategory;
+        private List<Long> preferCategory;
     }
 }
