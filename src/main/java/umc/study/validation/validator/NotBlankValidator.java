@@ -5,11 +5,11 @@ import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
-import umc.study.validation.annotation.NameNotBlank;
+import umc.study.validation.annotation.NotBlank;
 
 @Component
 @RequiredArgsConstructor
-public class NameBlankValidator implements ConstraintValidator<NameNotBlank, String> {
+public class NotBlankValidator implements ConstraintValidator<NotBlank, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
@@ -22,7 +22,7 @@ public class NameBlankValidator implements ConstraintValidator<NameNotBlank, Str
     }
 
     @Override
-    public void initialize(NameNotBlank constraintAnnotation) {
+    public void initialize(NotBlank constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 }

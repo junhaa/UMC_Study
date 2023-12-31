@@ -31,13 +31,17 @@ public enum ErrorStatus implements BaseErrorCode {
 
     // 주소 에러
     ADDRESS_LENGTH_NOT_VALID(HttpStatus.BAD_REQUEST, "ADDRESS4001", "주소의 길이가 " + ADDRESS_MIN_LENGTH + "에서 " + ADDRESS_MAX_LENGTH + "사이여야 합니다."),
-
     NAME_NOT_BLANK(HttpStatus.BAD_REQUEST, "NAME4001", "이름은 공백일 수 없습니다."),
 
+    // 점수 에러
+    SCORE_NOT_VALID(HttpStatus.BAD_REQUEST, "SCORE4001", "올바른 형태의 점수가 입력되지 않았습니다. 다시 확인해 주세요."),
 
-    // Region error
+    // 지역 관련 에러
     REGION_NOT_EXIST(HttpStatus.BAD_REQUEST, "REGION4001", "지역이 존재하지 않습니다."),
 
+
+    // 가게 관련 에러
+    STORE_NOT_EXIST(HttpStatus.BAD_REQUEST, "STORE4001", "가게가 존재하지 않습니다."),
 
     // 예시,,,
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),

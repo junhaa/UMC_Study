@@ -1,4 +1,4 @@
-package umc.study.service.MemberService;
+package umc.study.service.RegionService;
 
 import umc.study.domain.Store;
 import umc.study.web.dto.RegionRequestDTO;
