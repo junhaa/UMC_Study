@@ -6,17 +6,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
 import umc.study.service.MemberService.FoodCategoryValidationService;
-import umc.study.validation.annotation.FoodExistCategories;
+import umc.study.validation.annotation.ExistFoodCategories;
 
 import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class CategoriesExistValidator implements ConstraintValidator<FoodExistCategories, List<Long>> {
+public class CategoriesExistValidator implements ConstraintValidator<ExistFoodCategories, List<Long>> {
 
     public final FoodCategoryValidationService foodCategoryValidationService;
     @Override
-    public void initialize(FoodExistCategories constraintAnnotation) {
+    public void initialize(ExistFoodCategories constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 
