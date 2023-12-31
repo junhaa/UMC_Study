@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.study.apiPayload.ApiResponse;
-import umc.study.converter.StoreConvertor;
+import umc.study.converter.StoreConverter;
 import umc.study.domain.Store;
 import umc.study.service.RegionService.RegionCommandService;
 import umc.study.web.dto.RegionRequestDTO;
@@ -20,7 +20,7 @@ public class RegionRestController {
     public ApiResponse<RegionResponseDTO.JoinStoreResultDTO>
         addStore(@RequestBody @Valid RegionRequestDTO.JoinStoreDTO request, @PathVariable Long regionId) {
         Store store = regionCommandService.addStore(request, regionId);
-        return ApiResponse.onSuccess(StoreConvertor.toJoinStoreResultDTO(store));
+        return ApiResponse.onSuccess(StoreConverter.toJoinStoreResultDTO(store));
     }
 
 }

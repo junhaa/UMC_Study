@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import umc.study.domain.Mission;
 import umc.study.validation.annotation.ExistFoodCategories;
 import java.util.*;
 
@@ -30,5 +31,7 @@ public class MemberRequestDTO {
         private String specAddress;
         @ExistFoodCategories
         private List<Long> preferCategory;
+
+        private List<Mission> missionList;
     }
 }
