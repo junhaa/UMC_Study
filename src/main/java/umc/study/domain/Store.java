@@ -33,14 +33,16 @@ public class Store {
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    private List<Mission> missionList = new ArrayList<>();
+
+
     // 연관 관계 편의 메서드
     public void setRegion(Region region){
         if(this.region != null){
-            region.getStoreList().remove(this);
+            this.region.getStoreList().remove(this);
         }
         this.region = region;
         region.getStoreList().add(this);
     }
-
-
 }

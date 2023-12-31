@@ -13,4 +13,6 @@ public class ApplicationConstants {
     // 리뷰 주제 길이
     public static final int REVIEW_TITLE_MAX_LENGTH = 30;
 
+    // 미션 내용 길이
+    public static final int MISSION_MAX_LENGTH = 500;
 }

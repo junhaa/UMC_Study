@@ -5,7 +5,7 @@ import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
-import umc.study.service.RegionService.StoreValidationService;
+import umc.study.service.StoreService.StoreValidationService;
 import umc.study.validation.annotation.ExistStore;
 
 @Component

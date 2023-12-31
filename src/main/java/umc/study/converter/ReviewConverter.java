@@ -7,7 +7,7 @@ import umc.study.web.dto.StoreResponseDTO;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class ReviewConvertor {
+public class ReviewConverter {
 
     public static Review toReview(StoreRequestDTO.AddReviewDTO request){
         return Review.builder()

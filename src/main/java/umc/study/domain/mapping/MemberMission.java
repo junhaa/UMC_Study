@@ -25,6 +25,9 @@ public class MemberMission extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "mission_id")
     private Mission mission;
+
     @Enumerated(EnumType.STRING)
     private MissionStatus status;
+
+    public void setMission(Mission mission) { this.mission = mission; }
 }

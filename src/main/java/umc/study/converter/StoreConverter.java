@@ -6,7 +6,7 @@ import umc.study.web.dto.RegionResponseDTO;
 
 import java.time.LocalDateTime;
 
-public class StoreConvertor {
+public class StoreConverter {
 
     public static Store toStore(RegionRequestDTO.JoinStoreDTO joinStoreDTO){
         return Store.builder()
