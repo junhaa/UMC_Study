@@ -43,8 +43,12 @@ public enum ErrorStatus implements BaseErrorCode {
     // 가게 관련 에러
     STORE_NOT_EXIST(HttpStatus.BAD_REQUEST, "STORE4001", "가게가 존재하지 않습니다."),
 
+    // 미션 관련 에러
+    MISSION_NOT_EXIST(HttpStatus.BAD_REQUEST, "MISSION4001", "미션이 존재하지 않습니다."),
+    MEMBER_MISSION_NOT_EXIST(HttpStatus.BAD_REQUEST, "MISSION4002", "멤버의 미션이 존재하지 않습니다."),
+    MEMBER_MISSION_EXIST(HttpStatus.BAD_REQUEST, "MISSION4003", "이미 진행중이거나, 완료한 미션입니다."),
+
     // 예시,,,
-    ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트");
 
 

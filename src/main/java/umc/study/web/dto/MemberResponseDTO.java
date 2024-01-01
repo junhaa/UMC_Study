@@ -18,4 +18,13 @@ public class MemberResponseDTO {
         private Long memberId;
         private LocalDateTime createdAt;
     }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class AddMissionChallengeResultDTO{
+        private Long memberId;
+        private Long memberMissionId;
+    }
 }
