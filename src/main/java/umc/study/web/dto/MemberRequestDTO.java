@@ -5,8 +5,11 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import umc.study.domain.Mission;
+import umc.study.domain.enums.MissionStatus;
 import umc.study.validation.annotation.ExistFoodCategories;
-import java.util.*;
+import umc.study.validation.annotation.NotChallenging;
+
+import java.util.List;
 
 import static umc.study.util.ApplicationConstants.ADDRESS_MAX_LENGTH;
 import static umc.study.util.ApplicationConstants.ADDRESS_MIN_LENGTH;
@@ -34,4 +37,18 @@ public class MemberRequestDTO {
 
         private List<Mission> missionList;
     }
+
+
+    @NotChallenging
+    @Getter
+    public static class AddMissionChallengeDTO{
+        @NotNull
+        private Long missionId;
+
+        @NotNull
+        private Long memberId;
+
+        private MissionStatus missionStatus = MissionStatus.CHALLENGING;
+    }
+
 }
