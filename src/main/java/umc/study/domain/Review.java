@@ -2,7 +2,6 @@ package umc.study.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umc.study.domain.mapping.MemberPrefer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,4 +33,21 @@ public class Review {
 
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
     private List<ReviewImage> reviewImageList = new ArrayList<>();
+
+    // 연관 관계 편의 메서드 (필요한가 ?)
+    public void setStore(Store store){
+        if(this.store != null){
+            this.store.getReviewList().remove(this);
+        }
+        this.store = store;
+        store.getReviewList().add(this);
+    }
+
+    public void setMember(Member member){
+        if(this.member != null){
+            this.member.getReviewList().remove(this);
+        }
+        this.member = member;
+        member.getReviewList().add(this);
+    }
 }
